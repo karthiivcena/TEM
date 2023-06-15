@@ -20,6 +20,7 @@ int main()
     printf("\n Before Clearing: %d \n After clearing, New Value: %d \n Hexadecimal: %x \n ", a, c, c);
 }
 
+//SETTING A BIT TO 1
 int set_number(int a, int position)
 {
     set = (a | (1 << position));
@@ -27,6 +28,8 @@ int set_number(int a, int position)
     return set;
 }
 
+
+//CLEARING A BIT...SETTING A BIT TO 0
 int clear_bit(int a, int position)
 {
     cl = (set & (~ (1 << position)));
@@ -34,6 +37,7 @@ int clear_bit(int a, int position)
     return cl;
 }
 
+//BINARY CODE
 void bin(int no)
 {
     int temp = no;
