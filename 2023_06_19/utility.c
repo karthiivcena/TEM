@@ -16,10 +16,12 @@ int main()
 {
     int i;
     char str[SIZE];
-    printf("\n Enter the string of size %d \n", SIZE);
+    printf("\n Enter the string of size %d \n", SIZE);                
     scanf("%[^\n]",str);
+    
+    /* Converted Integer Value */
     int int_val =  ascii_to_int(str);
-    printf("\n The integer value is : %d \n ", int_val);
+    printf("\n The integer value is : %d \n ", int_val);              
     return 0;
 }
 
@@ -32,15 +34,21 @@ int ascii_to_int(char *str)
     int digit_started = 0;
     int number = 0;
     int i = 0;
-    for(i;str[i] != '\0'; i++)
+    
+    /* Traversing the string */
+    for(i;str[i] != '\0'; i++)                                       
     {
         if(str[i] == '-' || str[i] == '+')
 	{
+	
+	    /* CHecking if the digit is present or not */
 	    if(digit_started == PRESENT)
 	    {
 	        printf(" Error : Digit already present \n");
 	        return 0;
 	    }
+	    
+	    /* Checking if the sign is present or not */
 	    if(sign_started == 1)
 	    {
 	        printf("Error : Invalid input of the sign \n");
@@ -52,6 +60,8 @@ int ascii_to_int(char *str)
 	        sign = -1;
 	    }
         }
+        
+        /* Checking if the digit is present or not*/
         else if(str[i] >= '0' && str[i] <= '9')
         {   
     	    digit_started = PRESENT;
