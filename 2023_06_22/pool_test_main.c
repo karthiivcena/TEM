@@ -6,7 +6,7 @@ int main()
     int no;
    
     do{
-        printf(" \n Enter the function to be executed : \n \n 0 --> Exit \n 1 --> State Trnasition Function \n 2 --> Array Linked List Function \n 3 --> Utility Function \n 4 --> Count Words Function \n ");
+        printf(" \n Enter the function to be executed : \n \n 0 --> Exit \n 1 --> State Trnasition Function \n 2 --> Array Linked List Function \n 3 --> Utility Function \n 4 --> Count Words Function \n 5 --> SUM OF DIGITS USING VARIABLE LENGTH ARGUMENTS \n");
         scanf("%d", &no);
     	switch(no)
     	{
@@ -30,9 +30,14 @@ int main()
     		    /* Count Words Main Function*/
         	    count_words_main();
         	    break;
-        	case 5: 
+        	case 0: 
         	    printf("\n EXITED FROM THE MAIN FUNCTION \n\n");
         	    exit(0);
+        	case 5:
+        	    printf("\n Executing sum of specified digits using VARIABLE LENGTH ARUMENTS \n");
+        	    /* Sum of digits specified using VRAIABLE LENGTH ARGUMENTS */
+        	    valist_test_main();
+        	    break;
         	default :
         	    printf("\n Invalid Input \n\n");
         	    exit(0);

@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
 #include "array_linkedlist.h"
 
 #define TO_LOWER_(c) (((c) >= 'A' && (c) <= 'Z') ? (c) + ('a'-'A') : c)
@@ -16,6 +17,7 @@
 #define NOT_START 0
 #define PRESENT 1
 #define NOT_PRESENT 0
+
 
 
 /* MACROS FROM state_trans.c */
@@ -38,6 +40,7 @@ extern int utility_main();
 extern int count_words_main();
 extern int array_list_main();
 extern int utilities_main();
+extern int valist_test_main();
 
 extern int asci_to_int (char *str);
 extern char to_lower_char (char c);
@@ -50,5 +53,7 @@ extern void display_mem(char *str, int arr_size);
 extern char *str_cat(char *str1, char *str2);
 extern void swap(char c1,char c2);
 extern void mem_sets(char *ptr,char c, int size);
+
+
 
 #endif /* ENDING UTILITY_H */
