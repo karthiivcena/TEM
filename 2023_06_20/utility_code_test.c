@@ -13,6 +13,7 @@ void string_copy (char *dis, char *source);
 void mem_copy(char *dis, char *src, int size);
 void display_mem(char *str, int arr_size);
 char *str_cat(char *str1, char *str2);
+void swap(char c1,char c2);
 
 /* Main Function */
 int main()
@@ -37,7 +38,7 @@ int main()
 	//printf("when input is address to pointer,to upper using macro: %c\n",TO_UPPER_(cptr));
 	//printf("when input is address to pointer,to lower using macro: %c\n",TO_LOWER_(cptr));
 	
-	string_to_upper(array);
+	/*string_to_upper(array);
 	printf("Converted string:%s\n",array);
 	
 	string_to_lower(array);
@@ -47,16 +48,53 @@ int main()
 	//printf("Copied string is: %s\n",result);
 	
 	//printf("Enter size:\n");
-	//scanf("%d",&size);
+	//scanf("%d",&size); */
 	mem_copy(result, str, size);
 	//printf("Memory copied:%s\n", result);
 	
 	//display_mem(array, size);
-	char *ptr1 = str_cat(array,str);
+	/*char *ptr1 = str_cat(array,str);
 	
 	printf("Concatenated string is:%s\n", ptr1);
 	
 	return 0;
+	
+	char c = 'K';
+        mem_set(array, c, sizeof(array));*/
+        
+        string_reverse(array);
+}
+
+
+/* Function to set aside the memory */
+void mem_set(char *ptr,char c, int size)
+{
+    int index = 0;
+    while(index < size)
+    {
+        *(ptr + index) = c;
+        index += 1;
+    }  
+}
+
+/* Function to Reverse a String */
+void string_reverse(char str[SIZE])
+{
+    if(str == NULL)
+    {
+        printf(" \n Passing NULL as Parameter \n");
+        exit(0);
+    }
+    int index1,index2, str_len = 0;
+    for(index1 = 0; str[index1] != '\0'; index1++)
+        str_len += 1;
+    for(index1 = 0,index2 = str_len - 1; index1 < index2; index1++, index2--)
+    {
+        char temp = *(str + index1);
+        *(str + index1) = *(str + index2);
+        *(str + index2) = temp;
+    }
+    printf(" Reversed string is : %s \n ", str);
 }
 
 // Function to convert numbers given in string to decimal number
