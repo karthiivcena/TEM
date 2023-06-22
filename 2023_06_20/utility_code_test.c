@@ -1,8 +1,4 @@
-#include <stdio.h>
-
-#define SIZE 100
-#define TO_LOWER_(c) (((c) >= 'A' && (c) <= 'Z') ? (c) + ('a'-'A') : c)
-#define TO_UPPER_(c) (((c) >= 'a' && (c) <= 'z') ? (c) - ('a'-'A') : c)
+#include "utility.h"
 
 int asci_to_int (char *str);
 char to_lower_char (char c);
