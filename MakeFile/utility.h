@@ -52,9 +52,12 @@ extern int set_bit_main();
 extern int cpp_main();
 extern int big_little_endian_main();
 }
+
+/* ALL C++ MAIN FUNCTIONS */
 extern int oop_concept_main(); 
 extern int Byte_set_main();
 extern int function_overloading_main();
+extern int stackImp_main();
 
 /* ALL C FUNCTIONS WITHOUT MAIN */
 extern int asci_to_int (char *str);

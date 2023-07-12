@@ -17,16 +17,17 @@ create_rel_obj:
 	$(CPP_COMPILER) $(CMPLN_FLAGS) -DRELOCATABLE_OBJ opp_concept_test_main.cpp -o oops.o
 	$(CPP_COMPILER) $(CMPLN_FLAGS) -DRELOCATABLE_OBJ Byte.cpp -o byte.o
 	$(CPP_COMPILER) $(CMPLN_FLAGS) -DRELOCATABLE_OBJ fn_opt_ovld.cpp -o fn_ovl.o
+	$(CPP_COMPILER) $(CMPLN_FLAGS) -DRELOCATABLE_OBJ stackImp.cpp -o stack.o
 	$(CPP_COMPILER) $(CMPLN_FLAGS) pool_test_main.c -o main.o
 	
 regular_elf_exec: array_linkedlist.h Cpp.h utility.h
-	$(CPP_COMPILER) -I. -g state_trans.o array_linkedlist.o utility.o count_words.o valist_test.o fn_stack.o sort_bin.o set_bit.o endian.o oops.o byte.o fn_ovl.o main.o -o main_test
+	$(CPP_COMPILER) -I. -g state_trans.o array_linkedlist.o utility.o count_words.o valist_test.o fn_stack.o sort_bin.o set_bit.o endian.o oops.o byte.o fn_ovl.o stack.o main.o -o main_test
 	
 static_lib: create_rel_obj 
-	ar -rc libMyTestStatic.a state_trans.o array_linkedlist.o utility.o count_words.o valist_test.o fn_stack.o sort_bin.o set_bit.o endian.o oops.o byte.o fn_ovl.o
+	ar -rc libMyTestStatic.a state_trans.o array_linkedlist.o utility.o count_words.o valist_test.o fn_stack.o sort_bin.o set_bit.o endian.o oops.o byte.o fn_ovl.o stack.o
 
 shared_lib: create_rel_obj
-	$(CPP_COMPILER) -shared -o libMyTestShared.so state_trans.o array_linkedlist.o utility.o count_words.o valist_test.o fn_stack.o sort_bin.o set_bit.o endian.o oops.o byte.o fn_ovl.o
+	$(CPP_COMPILER) -shared -o libMyTestShared.so state_trans.o array_linkedlist.o utility.o count_words.o valist_test.o fn_stack.o sort_bin.o set_bit.o endian.o oops.o byte.o fn_ovl.o stack.o
 	
 elf_exec_using_static_lib: static_lib	
 	$(CPP_COMPILER) main.o -L. -lMyTestStatic -o maintestwstaticlib

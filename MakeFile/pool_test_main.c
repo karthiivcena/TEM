@@ -8,7 +8,7 @@ int test_main()
     int no;
    
     do{
-        printf(" \n Enter the function to be executed : \n \n 0 --> Exit \n 1 --> State Trnasition Function \n 2 --> Array Linked List Function \n 3 --> Utility Function \n 4 --> Count Words Function \n 5 --> SUM OF DIGITS USING VARIABLE LENGTH ARGUMENTS \n 6 --> Call the VIBGYOR Function \n 7 --> Call the Sort and Binary Function \n 8 --> C++ OOPs CONCEPTS \n 9 --> Bit Set for a specified position \n 10 --> SET LSB OR MSB OR K BITS \n 11 --> BIG ENDIAN OR LITTLE ENDIAN FUNCTION \n 12 --> Function Overloading, Operator Overloading along with Friend Function in C++ \n ");
+        printf(" \n Enter the function to be executed : \n \n 0 --> Exit \n 1 --> State Trnasition Function \n 2 --> Array Linked List Function \n 3 --> Utility Function \n 4 --> Count Words Function \n 5 --> SUM OF DIGITS USING VARIABLE LENGTH ARGUMENTS \n 6 --> Call the VIBGYOR Function \n 7 --> Call the Sort and Binary Function \n 8 --> C++ OOPs CONCEPTS \n 9 --> Bit Set for a specified position \n 10 --> SET LSB OR MSB OR K BITS \n 11 --> BIG ENDIAN OR LITTLE ENDIAN FUNCTION \n 12 --> Function Overloading, Operator Overloading along with Friend Function in C++ \n 13 --> STACK IMPLEMENTATION \n");
         scanf("%d", &no);
     	switch(no)
     	{
@@ -84,7 +84,7 @@ int test_main()
         	    
         	case 13:
         	    printf("\n STACK IMPLEMENTATION \n");
-        	    
+        	    stackImp_main();
         	    break;
         	    
         	default :
