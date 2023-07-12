@@ -146,19 +146,18 @@ Byte operator + (Byte &o1, Byte &o2)
     
     return result;
 }
- 
-    
+  
 /* Main Function */
 int main()
 {
     unsigned int value, position;
+    
     /* Calling all the functions from an object */
     char str[] = "  10110110  ";
     Byte b(str);
     b.setBit(1, 10);
     b.getBitStr(str);
     b.display();
-    
     
     /* Strings for operator overloading */
     char str1[10] = "10110011";
@@ -168,14 +167,10 @@ int main()
     Byte o2(str2);
     Byte o3;
     
-    
     /* Calling the opeartor overloading by objects */
     o3 = o1+o2;
     //o3.display(); 
     o3.displayAllForm();
-    
-    
-    Byte b1(19);
     
     return 0;
 }
