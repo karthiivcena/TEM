@@ -14,6 +14,8 @@ void fork_fun()
     pid = fork();
     printf("\n PID which we got is : %d \n", pid);
     
+    char *args[] = {"./exec.o", NULL};
+    
     if(pid > 0)
     {
         gl_var = 9;
@@ -29,6 +31,7 @@ void fork_fun()
         printf("\n Global Variable : %d", gl_var);
         printf("\n In Child Process \n\n");
         scanf("%c", &c);
+        execvp(args[0], args);
         exit(0);
     }
 }
